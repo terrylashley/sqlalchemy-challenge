@@ -94,7 +94,7 @@ def temps():
     # Create our session (link) from Python to the DB
     session = Session(engine)
     temp_list=[]
-    results = session.query(measurement.tobs).filter(measurement.date >= year_ago).all()
+    results = session.query(measurement.tobs).filter(measurement.date >= last_year).all()
     """* query for the dates and temperature observations from a year from the last data point.
   * Return a JSON list of Temperature Observations (tobs) for the previous year."""
     session.close()
